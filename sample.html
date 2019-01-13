@@ -1,4 +1,12 @@
-class Node {
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  
+  <script>
+  class Node {
 	            
 	            constructor(value) {
 	                this.val = value;
@@ -6,16 +14,18 @@ class Node {
 	            }
 	            
 	            addChild(value) {
-	                this.child.push(new Node(value));
+                    var node = new Node(value);
+	                this.child.push(node);
+                    return node;
 	            }
 	            
 	            print() {
 	                if(this.val) {
-	                    console.log(this.value);
+	                    console.log(this.val);
 	                }
 	                var x;
 	                for( x in this.child) {
-	                    console.log(x.val);
+                      this.child[x].print();
 	                }
 	            }
 	        }
@@ -38,6 +48,14 @@ class Node {
 	        
 	       
 	        var tree = new Tree(5);
-	        tree.root.addChild(6);
-	        tree.root.addChild(7);
+	        var sibling1 = tree.root.addChild(6);
+                sibling1.addChild(8);
+	        var sibling2 = tree.root.addChild(7);
+                sibling2.addChild(9);
 	        tree.print();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
