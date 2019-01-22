@@ -1,6 +1,3 @@
-var input = [4,5,6,7,8];
-  //console.log(input);
-  
   var Node = function(val) {
     this.val = val;
     this.LC = null;
@@ -52,10 +49,10 @@ var input = [4,5,6,7,8];
     // print tree from the specific node
     this.printC = function(node){
       if(node != null) {
-        node.toString();
         if(node.LC != null) {
           this.printC(node.LC);
-        }  
+        }
+        node.toString();
         if(node.RC != null) {
           this.printC(node.RC);
         }  
@@ -70,13 +67,13 @@ var input = [4,5,6,7,8];
     };
     
   };
-  
+
+  var input = [4,5,6,7,8,9,0,1,2,3];
+
   var tree = new BinaryTree();
-  tree.insert(4);
-  tree.insert(7); 
-  tree.insert(3);  
-  tree.insert(2);
-  //tree.insert(1);
-  //tree.insert(7);
+  for(x in input) {
+    //console.log(x);
+    tree.insert(input[x]);
+  }
+
   tree.show();
-  //console.log(tree);
